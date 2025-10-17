@@ -1,0 +1,28 @@
+name: QuickShopSupabaseSync
+main: com.SwineFeather.quickshop.supabase.QuickShopSupabaseSync
+version: 1.0.0
+api-version: 1.21
+softdepend: [QuickShop-Hikari]
+authors: [SwineFeather]
+description: Syncs QuickShop data to Supabase for external website access
+website: https://github.com/SwineFeather/QuickShop-Hikari-Supabase
+
+commands:
+  qss:
+    description: QuickShop Supabase Sync admin command
+    usage: /<command> <subcommand>
+    aliases: [quickshopsupabase, quickshopsync]
+    permission: quickshop.supabase.admin
+    permission-message: You do not have permission to use this command.
+    subcommands:
+      shopstats:
+        description: Show shop stats from Supabase view
+        usage: /qss shopstats <shop_id>
+
+permissions:
+  quickshop.supabase.admin:
+    description: Allows access to QuickShop Supabase Sync admin commands
+    default: op
+  quickshop.supabase.sync:
+    description: Allows manual sync operations
+    default: op 
